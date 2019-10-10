@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">噤声</string>
+    <string name="menu_NightMode">夜间模式</string>
+    <string name="menu_discuss">讨论</string>
+    <string name="action_settings">设置</string>
+    <string name="menu_group">圈子</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_want_to_go">想去</string>
+    <string name="menu_Aboutus">关于我们</string>
+    <string name="title_activity_about_us">关于我们</string>
+    <string name="large_text">噤声应用的描述</string>
+    <string name="nav_NightLightToast_closed">夜间模式 关闭</string>
+    <string name="nav_NightLightToast_open">夜间模式开启</string>
+    <string name="menu_home">主页</string>
+    <string name="about_developers">开发人信息</string>
+    <string name="about_basicInfo">基本信息</string>
+    <string name="about_basicInfoDetail">基本信息描述</string>
+    <string name="about_QrCode">二维码</string>
+    <string name="about_SupportUs">支持我们</string>
+    <string name="about_SupportUsDetail">支持我们描述</string>
+</resources>
