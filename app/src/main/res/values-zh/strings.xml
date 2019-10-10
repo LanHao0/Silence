@@ -19,4 +19,7 @@
     <string name="about_QrCode">二维码</string>
     <string name="about_SupportUs">支持我们</string>
     <string name="about_SupportUsDetail">支持我们描述</string>
+    <string name="login_email">邮箱地址</string>
+    <string name="login_passwd">密码</string>
+    <string name="login_button">登录</string>
 </resources>

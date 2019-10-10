@@ -20,7 +20,7 @@
     <string name="menu_NightMode">Night Light</string>
 
 
-<!--    aboutActivity-->
+    <!--    aboutActivity-->
     <string name="title_activity_about_us">AboutUS</string>
 
     <string name="about_developers">Developers</string>
@@ -33,4 +33,11 @@
 
     <string name="about_SupportUs">Support Us</string>
     <string name="about_SupportUsDetail">Support Us Detail</string>
+
+
+<!--    Login-->
+    <string name="login_email">Email Address</string>
+    <string name="login_passwd">Password</string>
+
+    <string name="login_button">Login</string>
 </resources>
