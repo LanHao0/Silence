@@ -6,27 +6,22 @@
 
         <item
             android:id="@+id/nav_want_to_go"
-            android:icon="@android:drawable/ic_menu_myplaces"
-            android:title="@string/menu_want_to_go" />
+            android:title="@string/menu_want_to_go"
+            />
         <item
             android:id="@+id/nav_discuss"
-            android:icon="@android:drawable/ic_menu_edit"
             android:title="@string/menu_discuss" />
         <item
             android:id="@+id/nav_group"
-            android:icon="@android:drawable/sym_action_chat"
             android:title="@string/menu_group" />
         <item
             android:id="@+id/nav_settings"
-            android:icon="@android:drawable/ic_menu_preferences"
             android:title="@string/menu_settings" />
         <item
             android:id="@+id/nav_AboutUs"
-            android:icon="@android:drawable/ic_menu_info_details"
             android:title="@string/menu_Aboutus" />
         <item
             android:id="@+id/nav_nightLight"
-            android:icon="@android:drawable/btn_star_big_off"
             android:title="@string/menu_NightMode"
             app:actionLayout="@layout/switch_item"
             app:showAsAction="always"

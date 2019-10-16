@@ -39,5 +39,7 @@
     <string name="login_email">Email Address</string>
     <string name="login_passwd">Password</string>
 
-    <string name="login_button">Login</string>
+    <string name="login_rememberpasswd">Remember Password</string>
+    <string name="login_button_login">Login</string>
+    <string name="login_button_signup">Sign up</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_Mainact_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
@@ -19,12 +20,15 @@
             android:layout_height="180dp"
             app:AutoPlayTime="3000"
             app:isShowIndicatorOnlyOne="true"
-            app:isShowNumberIndicator="true"
+            app:isShowNumberIndicator="false"
             app:pageChangeDuration="800"
+            app:isClipChildrenMode="true"
+            app:isAutoPlay="false"
+
             app:pointNormal="@drawable/shape_normal"
             app:pointSelect="@drawable/shape_selected"
-            app:pointsContainerBackground="#44aaaaaa"
-            app:pointsPosition="RIGHT"
+            app:pointsContainerBackground="@android:color/transparent"
+            app:pointsPosition="CENTER"
             app:tipTextSize="12sp" />
     </LinearLayout>
 

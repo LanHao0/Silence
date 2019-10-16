@@ -1,6 +1,8 @@
 package club.lanhaoo.silence;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +12,7 @@ import android.support.v4.view.MenuCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 
+import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -39,7 +42,7 @@ import club.lanhaoo.silence.leftpanel.LoginActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
+private SharedPreferences sharedPreferences_nightLight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,16 +81,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        sharedPreferences_nightLight=getSharedPreferences("nightLight_switch", Context.MODE_PRIVATE);
+
         Menu nav_menu=navigationView.getMenu();
         Switch switch_NightLight=(Switch) MenuItemCompat.getActionView(nav_menu.findItem(R.id.nav_nightLight)).findViewById(R.id.switch_Night_Light);
+
+        int int_nightLight_switch=sharedPreferences_nightLight.getInt("nightLight",0);
+        if (int_nightLight_switch==1){
+            switch_NightLight.setChecked(true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else{
+            switch_NightLight.setChecked(false);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
         switch_NightLight.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-
+                    //打开夜间模式
+                    sharedPreferences_nightLight.edit().putInt("nightLight",1).apply();
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 }else{
-
+                    //关闭夜间模式
+                    sharedPreferences_nightLight.edit().putInt("nightLight",0).apply();
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 }
+                recreate();
             }
         });
 
@@ -172,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(MainActivity.this, "点击了第" + (position + 1) + "图片", Toast.LENGTH_SHORT).show();
             }
         });
-        //加载广告图片
+        //加载图片
         banner.loadImage(new XBanner.XBannerAdapter() {
             @Override
             public void loadBanner(XBanner banner, Object model, View view, int position) {
@@ -181,6 +201,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 ((ImageView)view).setImageResource(((LocalImageInfo) model).getXBannerUrl());
             }
         });
+
     }
 
     /**
@@ -194,10 +215,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         List<LocalImageInfo> data = new ArrayList<>();
         data.add(new LocalImageInfo(R.drawable.ic_launcher));
         data.add(new LocalImageInfo(R.drawable.ic_launcher_round));
-
+        data.add(new LocalImageInfo(R.drawable.ic_launcher));
         XBanner mXBanner = (XBanner) findViewById(R.id.xbanner);
         mXBanner.setBannerData(data);
-        mXBanner.setAutoPlayAble(true);
+//        mXBanner.setAutoPlayAble(true);
     }
 }
 
